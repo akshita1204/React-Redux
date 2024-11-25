@@ -1,4 +1,6 @@
 import React from "react";
+import FoodItems from "./components/FoodItems";
+import ErrorMsg from "./components/ErrorMsg";
 function App() {
 
 let foodItems=["Dal","Green Vegetables","Salad","Chapati","Milk"]; 
@@ -16,23 +18,28 @@ let foodItems=["Dal","Green Vegetables","Salad","Chapati","Milk"];
 
  return (
  <React.Fragment>                            {/* we can use <></> also as it indicates the react.fragment */}
-  <h1>Healthy Food</h1>
-
+   <h1>Healthy Food</h1> 
+   <ErrorMsg items={foodItems}/>
+   <FoodItems items={foodItems}/>
   {/*{emptymsg} */}
    {/*{foodItems.length===0 ? <h3>I am still Hungry</h3> : null} */} {/*Ternary Operator */}
    
 
    {/*{foodItems.length===0 && <h3>I am still Hungry.</h3>} */} {/*Logical Operators */}
 
-  <ul class="list-group">
+  {/* <ul class="list-group"> */}
+
  {/*  <li class="list-group-item">Dal</li>
   <li class="list-group-item">Green Vegetables</li>
   <li class="list-group-item">Salad</li>
   <li class="list-group-item">Chapati</li>
   <li class="list-group-item">Milk</li> */}
-  {foodItems.map(item=>(<li key={item} class="list-group-item">{item}</li>))}   
+
+   {/* {foodItems.map(item=>(<li key={item} class="list-group-item">{item}</li>))}     */}
+
   {/*It is recommended to give key for the virtual DOM . Also map is the alternate of the loops*/}
-</ul>
+
+{/* </ul> */}
 </React.Fragment>
 );
 }
