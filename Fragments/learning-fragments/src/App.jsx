@@ -18,7 +18,7 @@ let foodItems=["Dal","Green Vegetables","Salad","Chapati","Milk"];
 
  return (
  <React.Fragment>                            {/* we can use <></> also as it indicates the react.fragment */}
-   <h1>Healthy Food</h1> 
+   <h1 className="foodheading">Healthy Food</h1> 
    <ErrorMsg items={foodItems}/>
    <FoodItems items={foodItems}/>
   {/*{emptymsg} */}
