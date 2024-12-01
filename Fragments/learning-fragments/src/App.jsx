@@ -1,6 +1,8 @@
 import React from "react";
 import FoodItems from "./components/FoodItems";
 import ErrorMsg from "./components/ErrorMsg";
+import Container from "./components/Container";
+import FoodInput from "./components/FoodInput";
 function App() {
 
 let foodItems=["Dal","Green Vegetables","Salad","Chapati","Milk"]; 
@@ -18,9 +20,16 @@ let foodItems=["Dal","Green Vegetables","Salad","Chapati","Milk"];
 
  return (
  <React.Fragment>                            {/* we can use <></> also as it indicates the react.fragment */}
+   <Container>
    <h1 className="foodheading">Healthy Food</h1> 
    <ErrorMsg items={foodItems}/>
-   <FoodItems items={foodItems}/>
+    <FoodInput/>
+   <FoodItems items={foodItems}/> 
+   </Container>
+
+   <Container>
+    <p>Above is the list of the fruits.</p>
+   </Container>
   {/*{emptymsg} */}
    {/*{foodItems.length===0 ? <h3>I am still Hungry</h3> : null} */} {/*Ternary Operator */}
    
