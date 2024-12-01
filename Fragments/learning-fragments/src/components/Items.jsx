@@ -1,11 +1,7 @@
 import styles from "./Items.module.css"
 
-const Items=({foodItem})=>
+const Items=({foodItem,handleBuyButtonClicked})=>
 {
-const handleBuyButtonClicked=(event)=>
-{
-    console.log(`${foodItem } Button clicked`);
-};
  return (
     <li className={`${styles['kg-items']} list-group-item`}>
         <span className={styles['kg-span']}>{foodItem}</span>

@@ -6,6 +6,12 @@ import FoodInput from "./components/FoodInput";
 function App() {
 
 let foodItems=["Dal","Green Vegetables","Salad","Chapati","Milk"]; 
+let texttoshow="Food Items entered by the user.";
+const handleOnChange=(event)=>
+ {
+    console.log(event.target.value);
+    texttoshow=event.target.value;
+  }
 
 {/*Conditional Statements */}
 {/*if(foodItems.length===0) 
@@ -23,7 +29,8 @@ let foodItems=["Dal","Green Vegetables","Salad","Chapati","Milk"];
    <Container>
    <h1 className="foodheading">Healthy Food</h1> 
    <ErrorMsg items={foodItems}/>
-    <FoodInput/>
+   <p>{texttoshow}</p>
+
    <FoodItems items={foodItems}/> 
    </Container>
 
