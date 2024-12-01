@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import FoodItems from "./components/FoodItems";
 import ErrorMsg from "./components/ErrorMsg";
 import Container from "./components/Container";
 import FoodInput from "./components/FoodInput";
+
 function App() {
 
-let foodItems=["Dal","Green Vegetables","Salad","Chapati","Milk"]; 
-let texttoshow="Food Items entered by the user.";
+//let fooditems=["Dal","Green Vegetables","Salad","Chapati","Milk"]; 
+
+let[foodItems,setfooditems]=useState(["Dal","Green Vegetables","Salad","Chapati","Milk"]);
+
+// let textstateArr=useState("Food item entered by user");
+// let texttoshow=textstateArr[0];
+// let setsstate=textstateArr[1];
+
+let [texttoshow,setsstate]=useState();
+
+
+//let texttoshow ="Food Items entered by the user.";
+
+
 const handleOnChange=(event)=>
  {
-    console.log(event.target.value);
-    texttoshow=event.target.value;
+  if(event.key==='Enter')
+  {
+    let newFoodItem=event.target.value;  //to find the value entered
+    let newItems=[...foodItems,newFoodItem];
+    event.target.value="";
+    setfooditems(newItems);    //to add the values in the conatainer
+    console.log(newFoodItem);
+  }
+    // console.log(event);
+    // setsstate(event.target.value);
   }
 
 {/*Conditional Statements */}
@@ -28,14 +49,15 @@ const handleOnChange=(event)=>
  <React.Fragment>                            {/* we can use <></> also as it indicates the react.fragment */}
    <Container>
    <h1 className="foodheading">Healthy Food</h1> 
+   <FoodInput handleOnChange={handleOnChange}/>
    <ErrorMsg items={foodItems}/>
-   <p>{texttoshow}</p>
+    {/* <p>{texttoshow}</p>  */}
 
    <FoodItems items={foodItems}/> 
    </Container>
 
    <Container>
-    <p>Above is the list of the fruits.</p>
+    {/* <p>Above is the list of the fruits.</p> */}
    </Container>
   {/*{emptymsg} */}
    {/*{foodItems.length===0 ? <h3>I am still Hungry</h3> : null} */} {/*Ternary Operator */}
