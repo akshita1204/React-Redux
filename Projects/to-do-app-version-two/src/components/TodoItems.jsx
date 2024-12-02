@@ -4,7 +4,11 @@ const TodoItems=({todoItems})=>
 {
     return (
         <div class={styles.itemsContainer}>
-    {todoItems.map(item=><ToDoItem todoName={item.name} todoDate={item.duedate}></ToDoItem>)}
+    {todoItems.map(item=><ToDoItem
+    
+     todoName={item.name} 
+     todoDate={item.duedate}
+     ></ToDoItem>)}
     </div>
     );
 }

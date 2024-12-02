@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { IoAddCircle } from "react-icons/io5";
 
 function AddToDo({onNewItem})
 {
@@ -35,7 +36,9 @@ setduedate("");
     <div className="col-2">
      <button type="button" class="btn btn-success kg-button"
      onClick={handlebuttonclicked}
-     >Add</button>
+     >
+      <IoAddCircle />
+     </button>
     </div>
 </div>
 </div>

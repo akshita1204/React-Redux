@@ -23,7 +23,7 @@ function App() {
   
   const handleNewItem=(itemName,itemDueDate)=>
   {
-    console.log(`New Item Name: ${itemName}  New Item Date:${itemDueDate}`);
+    //console.log(`New Item Name: ${itemName}  New Item Date:${itemDueDate}`);
     const newtodoitems=[...todoItems,{name:itemName,duedate:itemDueDate}];
     settodoItems(newtodoitems);
   }

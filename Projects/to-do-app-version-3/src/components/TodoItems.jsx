@@ -4,7 +4,11 @@ const TodoItems=({todoItems,onDeleteClick})=>
 {
     return (
         <div class={styles.itemsContainer}>
-    {todoItems.map(item=><ToDoItem todoName={item.name} todoDate={item.duedate} onDeleteClick={onDeleteClick}></ToDoItem>)}
+    {todoItems.map(item=><ToDoItem 
+    key={item.name}
+    todoName={item.name} 
+    todoDate={item.duedate}
+     onDeleteClick={onDeleteClick}></ToDoItem>)}
     </div>
     );
 }

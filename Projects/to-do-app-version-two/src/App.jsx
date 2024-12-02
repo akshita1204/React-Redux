@@ -1,7 +1,7 @@
 import AddToDo from "./components/AddToDo";
 import AppName from "./components/AppName";
 import "./App.css";
-import TodoItems from "./components/ToDoItems";
+import TodoItems from "./components/TodoItems";
 
 const todoItems=[
   {
