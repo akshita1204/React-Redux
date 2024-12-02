@@ -28,11 +28,18 @@ function App() {
     settodoItems(newtodoitems);
   }
 
+  const handleDeleteItems=(todoItemsName)=>
+  {
+    const newtodoitems=todoItems.filter(item=>item.name !=todoItemsName); //jinpar delete button nahi call hua unko set kardo
+    settodoItems(newtodoitems);
+    console.log(`Item Deleted:${todoItemsName}`);
+  }
+
   return <center class="todo-container">
     <AppName/>
     <AddToDo onNewItem={handleNewItem}/>
     {todoItems.length===0 && <WelcomeMsg/>}
-    <TodoItems todoItems={todoItems}></TodoItems>
+    <TodoItems todoItems={todoItems} onDeleteClick={handleDeleteItems}></TodoItems>
    
   </center>
 }
