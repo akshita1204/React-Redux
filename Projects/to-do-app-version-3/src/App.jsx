@@ -30,7 +30,7 @@ function App() {
 
   const handleDeleteItems=(todoItemsName)=>
   {
-    const newtodoitems=todoItems.filter(item=>item.name !=todoItemsName); //jinpar delete button nahi call hua unko set kardo
+    const newtodoitems=todoItems.filter(item=>item.name !=todoItemsName); //jinpar delete button nahi call hua unko set kard0
     settodoItems(newtodoitems);
     console.log(`Item Deleted:${todoItemsName}`);
   }
