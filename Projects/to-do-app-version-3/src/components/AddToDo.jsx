@@ -20,13 +20,15 @@ const handlebuttonclicked=()=>
 onNewItem(todoname,duedate);
 settodoname("");
 setduedate("");
+// { this can be used instead of the above if we are using the form => event.preventDefault();}
 }
   
 
 
   return (
     <div className="container text-center">
-    <div className="row kg-row">
+    <div className="row kg-row">     
+      {/* {form insetad of div can be used    //  {onSubmit={handlebuttonclicked}}}  and this can be used with form instead on using onClick on button as it is not button specific , it is a property of form*/}
        <div class="col-6">
          <input type="text" placeholder="Enter TODO here" value={todoname} onChange={handlenamechange}/>
        </div>
@@ -36,6 +38,7 @@ setduedate("");
     <div className="col-2">
      <button type="button" class="btn btn-success kg-button"
      onClick={handlebuttonclicked}
+   
      >
       <IoAddCircle />
      </button>
