@@ -4,6 +4,7 @@ import "./App.css";
 import TodoItems from "./components/ToDoItems";
 import { useState } from "react";
 import WelcomeMsg from "./components/WelcomeMsg";
+import { ToDoItemsContext } from "./store/todo-items-store";
 
 
 
@@ -35,13 +36,16 @@ function App() {
     console.log(`Item Deleted:${todoItemsName}`);
   }
 
-  return <center class="todo-container">
+  return <ToDoItemsContext.Provider value={[]}>
+
+  <center class="todo-container">
     <AppName/>
     <AddToDo onNewItem={handleNewItem}/>
     {todoItems.length===0 && <WelcomeMsg/>}
     <TodoItems todoItems={todoItems} onDeleteClick={handleDeleteItems}></TodoItems>
    
   </center>
+  </ToDoItemsContext.Provider>
 }
 
 export default App;
