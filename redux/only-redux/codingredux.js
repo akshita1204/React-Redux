@@ -10,5 +10,5 @@ const subscriber=()=>
     console.log(state);
 }
 store.subscribe(subscriber);
-//to throw any action 
-store.dispatch({type});
+//to throw any action we use this 
+store.dispatch({type}); 
